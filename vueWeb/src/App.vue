@@ -1,21 +1,38 @@
 
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <!--<img src="./assets/logo.png">-->
+<div>
+  <label>OverAir's Test </label><br/>
+  <br/>
+  <selectTest ref="selectitem"></selectTest>
+  <el-button @click="getSelect">获取</el-button>
+</div>
 
-    <Upload></Upload>
 
-    <router-view></router-view>
+    <!--<router-view></router-view>-->
   </div>
 </template>
 
 <script>
-  import Upload from './pages/upload.vue'
+  import selectTest from './pages/selectTest.vue'
 
   export default {
     name: 'app',
+//    data(){
+//    return{
+//
+//    }
+//
+//  },
     components:{
-      Upload
+      selectTest
+    },
+  methods:{
+      getSelect(){
+        console.log(this.$refs.selectitem.selectValue);
+        alert(this.$refs.selectitem.selectValue);
+      }
     }
   }
 </script>
